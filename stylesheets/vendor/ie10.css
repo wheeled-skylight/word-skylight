@@ -1,0 +1,17 @@
+/*
+ *
+ *  This is a condititonal stylesheet to render if the browser is >= Internet Explorer 9
+ *
+ */
+
+.ie10 ul.social-notification-sub-menu  {
+    margin-top: 0px !important;
+}
+
+.ie10 li.wish-on-sale-social-notification a {
+    width: 235px;
+}
+
+/*.ie10 span.message  {*/
+    /*max-width: 220px;*/
+/*}*/

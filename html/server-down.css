@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    font-family:"Ubuntu",sans-serif;
+    background: #ccc;
+}
+
+a {
+    text-decoration:none;
+    color:#1fb5ee;
+}
+.header{
+    position:relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 38px;
+    width:1250px;
+    height: 112px;
+    background: #282828;
+    margin-bottom: 20px;
+}
+.logo{
+    position: absolute;
+    top: -28px;
+    left:540px;
+    width: 150px;
+    height:100px;
+    background: url('/assets/splash-logo.png') 0 0 no-repeat;
+}
+h1{
+    padding-top: 80px;
+    color:#bdbdbd;
+    text-align:center;
+    font-size: 16px;
+    line-height: 24px;
+}
+.error{
+    padding-top: 100px;
+    width: 204px;
+    margin: 0 auto;
+    height: 213px;
+    background: url('/images/cloud-server.gif') 0 100px no-repeat;
+}
+p{
+    text-align: center;
+    margin-top: 35px;
+    color:#4a4a4a;
+    font-size: 18px;
+}
+.emptybg {
+    /*background-color:#F4F5EF;*/
+    width:100%;
+    margin:0 auto;
+    padding:50px 0;
+    text-align:center;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 4px 17px;
+    margin-bottom: 0;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    color:#FFF;
+}
+
+.btn-blue {
+    color: white;
+    font-size: 1.0em;
+    background-image: none;
+    border: 1px solid #00b5f1;
+    background-color: #00b5f1;
+}
