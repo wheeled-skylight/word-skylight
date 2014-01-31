@@ -1,24 +1,18 @@
-window.WordsSkylight =
-
-  Models: {}
-
+window.Skylight =
   Collections: {}
-
+  Models: {}
   Views: {}
-
-  Routers: {}
-
-  References: {
-    Constants:{
-      api_url:'http://localhost:8080'
-      }
-    Views: {}
-    Auth: {}
-    Models: {}
-    Collections: {}
-    Routers: {}
-    Modals: {}
+  Router: {}
+  references: {
+    constants: {
+      root_url: 'http://localhost:3000'
+    }
   }
+  initialize: ->
+    console.log('starting...')
+    new Skylight.Router.MainRouter
+    Backbone.history.start()
+    console.log('done starting')
 
 
 
