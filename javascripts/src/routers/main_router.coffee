@@ -9,6 +9,7 @@ class Skylight.Router.MainRouter extends Backbone.Router
 
 
   index: ->
+    console.log("starting chunks")
     words = new Skylight.Collections.Words('/words/intersect')
     words.fetch
       data: JSON.stringify(words.payload)
@@ -17,10 +18,6 @@ class Skylight.Router.MainRouter extends Backbone.Router
       success: (sample) ->
         wordsView = new Skylight.Views.Words(collection: sample)
         $('#words-container').html(wordsView.render().el)
-
-
-
-
 
   appendWords: (view) ->
     console.log("appening words...")

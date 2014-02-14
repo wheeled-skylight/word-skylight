@@ -1,1 +1,1 @@
-<span><%= @word %></span> - <%= @text %>
+<span><%= @word %></span> - <%= @count %>
