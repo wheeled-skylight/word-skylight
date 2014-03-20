@@ -41,8 +41,8 @@
                             "</div></h4>";
                 }
 
-                return "<div id='circle-" + index + "' class='col-md-2'>" +
-                        "<div class='circle outer " + extra_class + "'>" +
+                return "<div id='circle-" + index + "' class='col-md-2 " + extra_class + "'>" +
+                        "<div class='circle outer'>" +
                         content +
                         "</div>" +
                         "</div>"
@@ -73,7 +73,8 @@
     var createCroppedRow = function () {
         var row = $("<div class='row cropped'></div>");
         row.append(createSmallCircle(0, "turned"));
-        for (var i = 1; i < 4; i++) {
+        row.append(createSmallCircle(1, ""));
+        for (var i = 2; i < 4; i++) {
             if (i < 2) {
                 row.append(createSmallCircle(i, ""));
             } else {
@@ -84,13 +85,14 @@
     };
     var createBigRow = function () {
         var row = $("<div class='row'></div>");
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 3; i++) {
             if (i == 2) {
                 row.append(createBigCircle(i));
             } else {
                 row.append(createSmallCircle(i, ""));
             }
         }
+        row.append(createSmallCircle(4, "turned"));
         row.append(createSmallCircle(5, "turned"));
         return row;
     };
