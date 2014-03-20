@@ -11,7 +11,7 @@ module.exports = (grunt) ->
     less:
       app:
         options: yuicompress: true
-        files: 'stylesheets/style.css' : 'stylesheets/src/style.less'
+        files: 'stylesheets/style.css' : 'stylesheets/src/*.less'
 
     watch:
       coffee:

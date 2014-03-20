@@ -1,6 +1,105 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Word Skylight</title>
+    <title>World Skylight</title>
+    <link rel="stylesheet" href="../../stylesheets/vendor/bootstrap.css">
+    <link rel="stylesheet" href="../../stylesheets/vendor/ie10.css">
+    <link rel="stylesheet" href="../../stylesheets/vendor/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+    <script type="text/javascript" src="../../javascripts/vendor/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/bootstrap.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/underscore.1.4.4.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/backbone.1.0.0.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/Chart.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="../../javascripts/application.js"></script>
 </head>
-<body></body>
+<body>
+<div id="sources">
+</div>
+<script type="text/javascript">
+    var extra = ""
+
+    var createSmallCircle = function (index, extra_class, text) {
+                var content = "";
+                if (extra_class === "turned") {
+                    content = "<h3><div class='item'>word1</div>" +
+                            "<div class='item'>word2</div>" +
+                            "<div class='item'>word3</div>" +
+                            "<div class='item'>word4</div>" +
+                            "<div class='item'>word5</h3> </div>" +
+                            "<div class='circle inner crop_mini'>" +
+                            "<img src='wp.png'>" +
+                            "</div>";
+
+                } else {
+                    content = "<h4><div class='item1'>word</div>" +
+                            "<div class='item2'>word2</div>" +
+                            "<div class='item3'>word3</div>" +
+                            "<div class='circle inner crop'>" +
+                            "<img  src='wp.png'>" +
+                            "</div></h4>";
+                }
+
+                return "<div id='circle-" + index + "' class='col-md-2'>" +
+                        "<div class='circle outer " + extra_class + "'>" +
+                        content +
+                        "</div>" +
+                        "</div>"
+            }
+            ;
+    var createBigCircle = function (index, text) {
+        return "<div id='circle-" + index + "' class='col-md-4'>" +
+                "<div class='circle center'>" +
+                "<small class='inner-text'>" +
+                "<h2>intersection1<br><br>" +
+                "intersection2<br><br>" +
+                "intersection3<br><br>" +
+                "intersection4<br><br>" +
+                "intersection5</h2>" +
+                "</small>" +
+                "</div>" +
+                "</div>"
+    };
+
+    var createSmallRow = function (extra) {
+        var row = $("<div class='row " + extra + "'></div>");
+        row.append(createSmallCircle(0, "turned"));
+        for (var i = 1; i < 6; i++) {
+            row.append(createSmallCircle(i, ""));
+        }
+        return row;
+    };
+    var createCroppedRow = function () {
+        var row = $("<div class='row cropped'></div>");
+        row.append(createSmallCircle(0, "turned"));
+        for (var i = 1; i < 4; i++) {
+            if (i < 2) {
+                row.append(createSmallCircle(i, ""));
+            } else {
+                row.append(createSmallCircle(i, "up"));
+            }
+        }
+        return row;
+    };
+    var createBigRow = function () {
+        var row = $("<div class='row'></div>");
+        for (var i = 0; i < 4; i++) {
+            if (i == 2) {
+                row.append(createBigCircle(i));
+            } else {
+                row.append(createSmallCircle(i, ""));
+            }
+        }
+        row.append(createSmallCircle(5, "turned"));
+        return row;
+    };
+    console.log("drawing...");
+    $("#sources").append(createSmallRow(""));
+    $("#sources").append(createBigRow());
+    $("#sources").append(createCroppedRow());
+    $("#sources").append(createSmallRow("down"));
+
+</script>
+</body>
 </html>
