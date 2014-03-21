@@ -1,6 +1,3 @@
-class Skylight.Models.Word extends Backbone.Model
-
-
 class Skylight.Collections.Words extends Backbone.Collection
 
   model: Skylight.Models.Word
@@ -44,7 +41,7 @@ class Skylight.Collections.Words extends Backbone.Collection
     n: 1000
 
   url: ->
-    Skylight.references.constants.root_url + @endpoint
+    Skylight.References.Constants.root_url + @endpoint
 
   parse: (response) ->
     response.words

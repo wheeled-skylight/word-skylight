@@ -3,9 +3,9 @@ window.Skylight =
   Models: {}
   Views: {}
   Router: {}
-  references: {
-    constants: {
-      root_url: 'http://localhost:3000'
+  References: {
+    Constants: {
+      root_url: 'http://localhost:8081'
     }
   }
   initialize: ->
